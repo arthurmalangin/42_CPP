@@ -24,6 +24,5 @@ void Zombie::randomChump( std::string Name ) {
 }
 
 Zombie::~Zombie(void) {
-    if (!this->_Name.empty())
-        std::cout << _Name << " destroyed..." << std::endl;  
+    std::cout << _Name << " destroyed..." << std::endl;  
 }
