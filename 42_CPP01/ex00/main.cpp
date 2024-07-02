@@ -1,10 +1,10 @@
 #include "Zombie.hpp"
 
 int main(void) {
-    Zombie *heapman = Zombie::newZombie("Heapman");
+    Zombie *heapman = newZombie("Heapman");
     heapman->announce();
 
-    Zombie::randomChump("Stackman");
+    randomChump("Stackman");
     delete heapman;
 
     return 0;

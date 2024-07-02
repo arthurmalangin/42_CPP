@@ -9,10 +9,11 @@ class Zombie {
         Zombie(void);
         ~Zombie(void);
         Zombie(std::string Name);
-        static Zombie *newZombie( std::string Name);
-        void randomChump( std::string Name );
     private:
         std::string _Name;
 };
+
+void randomChump( std::string Name );
+Zombie *newZombie( std::string Name);
 
 #endif
