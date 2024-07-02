@@ -14,9 +14,6 @@ class Zombie {
         std::string _Name;
 };
 
-void randomChump( std::string Name );
-Zombie *newZombie( std::string Name);
-Zombie* zombieHorde( int N, std::string name );
 Zombie* zombieHorde( int N, std::string name );
 
 
