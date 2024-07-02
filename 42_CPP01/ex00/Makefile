@@ -1,12 +1,11 @@
-NAME            =       phonebook
+NAME            =       zb
 
 CC              =       c++
 
 FLAG            =       -Wall -Wextra -Werror -std=c++98 -g 
 
-C_FILE          =       Contact.cpp	\
+C_FILE          =       Zombie.cpp	\
 						main.cpp \
-						PhoneBook.cpp \
 
 
 
@@ -24,7 +23,7 @@ OBJ                     =       $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "\033[0;33m\nCOMPILING EX01...\n"
+	@echo "\033[0;33m\nCOMPILING EX00...\n"
 	$(CC) $(FLAG) $(OBJ) -o $(NAME)
 	@echo "\033[1;32m./$(NAME) created\n"
 
