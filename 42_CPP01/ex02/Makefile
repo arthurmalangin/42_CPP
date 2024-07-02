@@ -4,11 +4,7 @@ CC              =       c++
 
 FLAG            =       -Wall -Wextra -Werror -std=c++98 -g 
 
-C_FILE          =       Zombie.cpp	\
-						main.cpp \
-						randomChump.cpp \
-						newZombie.cpp \
-						zombieHorde.cpp \
+C_FILE          =       main.cpp \
 
 
 
@@ -26,7 +22,7 @@ OBJ                     =       $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "\033[0;33m\nCOMPILING EX01...\n"
+	@echo "\033[0;33m\nCOMPILING EX02...\n"
 	$(CC) $(FLAG) $(OBJ) -o $(NAME)
 	@echo "\033[1;32m./$(NAME) created\n"
 
