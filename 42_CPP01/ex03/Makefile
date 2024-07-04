@@ -5,6 +5,9 @@ CC              =       c++
 FLAG            =       -Wall -Wextra -Werror -std=c++98 -g 
 
 C_FILE          =       main.cpp \
+						HumanA.cpp \
+						HumanB.cpp \
+						Weapon.cpp \
 
 
 
@@ -22,7 +25,7 @@ OBJ                     =       $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "\033[0;33m\nCOMPILING EX02...\n"
+	@echo "\033[0;33m\nCOMPILING EX03...\n"
 	$(CC) $(FLAG) $(OBJ) -o $(NAME)
 	@echo "\033[1;32m./$(NAME) created\n"
 
