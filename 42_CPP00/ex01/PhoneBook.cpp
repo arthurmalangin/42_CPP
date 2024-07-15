@@ -3,12 +3,12 @@
 
 PhoneBook::PhoneBook(void) {
     this->index = 0;
-    std::cout << "Created PhoneBook !" << std::endl; 
+    std::cout << "Type: ADD, SEARCH or EXIT !" << std::endl; 
 }
 
 void PhoneBook::add_contact(std::string firstname, std::string lastname, std::string nickname, std::string phonenumber, std::string secret) {
     if (firstname.empty() || lastname.empty() || nickname.empty() || phonenumber.empty() || secret.empty()) {
-        std::cout << "Can't register contact, field cannot be empty." << std::endl;
+        std::cout << "\nCan't register contact, field cannot be empty." << std::endl;
         return ;
     }
     if (this->index > 7) {
@@ -20,8 +20,6 @@ void PhoneBook::add_contact(std::string firstname, std::string lastname, std::st
     _phonebook[this->index].setNickName(nickname);
     _phonebook[this->index].setPhone(phonenumber);
     _phonebook[this->index].setSecret(secret);
-    // if (firstname != "")
-    //     std::cout << firstname << std::endl;
     this->index++;
 }
 
