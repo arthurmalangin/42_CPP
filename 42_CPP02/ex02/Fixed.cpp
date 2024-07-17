@@ -127,6 +127,7 @@ Fixed Fixed::operator--(int) {
     return (*this);
 }
 
+
 Fixed& Fixed::min(Fixed &a, Fixed &b) {
     if (a.getRawBits() > b.getRawBits())
         return (b);
