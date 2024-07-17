@@ -1,4 +1,4 @@
-NAME            =       ex01
+NAME            =       ex02
 
 CC              =       c++
 
@@ -6,7 +6,7 @@ FLAG            =       -Wall -Wextra -Werror -std=c++98 -g
 
 C_FILE          =       ClapTrap.cpp	\
 						ScavTrap.cpp	\
-						FlagTrap.cpp	\
+						FragTrap.cpp	\
 						main.cpp 		\
 
 SRC_DIR         =       ./
@@ -23,7 +23,7 @@ OBJ                     =       $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "\033[0;33m\nCOMPILING EX01...\n"
+	@echo "\033[0;33m\nCOMPILING EX02...\n"
 	$(CC) $(FLAG) $(OBJ) -o $(NAME)
 	@echo "\033[1;32m./$(NAME) created\n"
 
