@@ -90,14 +90,14 @@ Fixed Fixed::operator-(const Fixed &obj) {
 Fixed Fixed::operator/(const Fixed &obj) {
     Fixed tmp;
 
-    tmp.nb = this->getRawBits() / obj.getRawBits();
+    tmp.nb = (this->getRawBits() * (1 << this->bits)) / obj.getRawBits();
     return (tmp);
 }
 
 Fixed Fixed::operator*(const Fixed &obj) {
     Fixed tmp;
 
-    tmp.nb = this->getRawBits() * obj.getRawBits();
+    tmp.nb = (this->getRawBits() * obj.getRawBits()) / (1 << this->bits);
     return (tmp);
 }
 
