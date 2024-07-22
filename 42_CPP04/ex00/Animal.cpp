@@ -2,7 +2,7 @@
 
 Animal::Animal(void) {
     this->type = "Default";
-    std::cout << "Default Constructor of Animal Call !" << std::endl;
+    std::cout << "Default Constructor of Animal Call with type : " << this->getType() << " !" << std::endl;
 }
 
 Animal::Animal(const Animal &obj) {
@@ -11,7 +11,7 @@ Animal::Animal(const Animal &obj) {
 }
 
 Animal::~Animal(void) {
-    std::cout << "Destructor of Animal Call !" << std::endl;
+    std::cout << "Destructor of Animal Call with type : " << this->getType() << " !" << std::endl;
 }
 
 Animal& Animal::operator=(const Animal &obj) {
@@ -20,6 +20,7 @@ Animal& Animal::operator=(const Animal &obj) {
 }
 
 void Animal::makeSound(void) const {
+    std::cout << "Default Make Sound" << std::endl;
 }
 
 std::string Animal::getType(void) const {

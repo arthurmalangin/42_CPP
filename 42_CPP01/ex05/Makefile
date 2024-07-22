@@ -29,12 +29,12 @@ $(NAME): $(OBJ)
 
 clean:
 	@echo "\033[0;31mDeleting objects...\n"
-	@rm $(OBJ)
+	@rm -rf $(OBJ)
 	@echo "\033[1;32mDone\n"
 
-fclean:
+fclean: clean
 	@echo "\033[0;31mDeleting executable..."
-	@rm  $(OBJ) $(NAME)
+	@rm  -rf $(NAME)
 	@echo "\033[1;32mDone\n"
 
 re: fclean all
