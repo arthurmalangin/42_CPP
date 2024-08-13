@@ -1,13 +1,13 @@
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(void) {
-    std::cout << "Default Constructor of WrongCat Call !" << std::endl;
+WrongCat::WrongCat(void) : WrongAnimal(){
     this->type = "WrongCat";
+    std::cout << "Default Constructor of WrongCat Call !" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &obj) {
-    std::cout << "Copy Constructor of WrongCat Call !" << std::endl;
+WrongCat::WrongCat(const WrongCat &obj) : WrongAnimal(){
     this->type = obj.type;
+    std::cout << "Copy Constructor of WrongCat Call !" << std::endl;
 }
 
 WrongCat::~WrongCat(void) {

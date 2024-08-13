@@ -1,13 +1,13 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void) {
-    std::cout << "Default Constructor of WrongAnimal Call with type : " << this->getType() << " !" << std::endl;
     this->type = "Default";
+    std::cout << "Default Constructor of WrongAnimal Call with type : " << this->getType() << " !" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &obj) {
-    std::cout << "Copy Constructor of WrongAnimal Call !" << std::endl;
     this->type = obj.type;
+    std::cout << "Copy Constructor of WrongAnimal Call !" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal(void) {
