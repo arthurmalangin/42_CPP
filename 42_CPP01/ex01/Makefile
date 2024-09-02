@@ -1,4 +1,4 @@
-NAME            =       zb
+NAME            =       ex01
 
 CC              =       c++
 
@@ -6,8 +6,6 @@ FLAG            =       -Wall -Wextra -Werror -std=c++98 -g
 
 C_FILE          =       Zombie.cpp	\
 						main.cpp \
-						randomChump.cpp \
-						newZombie.cpp \
 						zombieHorde.cpp \
 
 

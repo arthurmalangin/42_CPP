@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 
-
 void stringReplace(std::string &line, std::string toSearch, std::string toReplace)
 {
     size_t pos = line.find(toSearch);
@@ -27,7 +26,8 @@ int main(int argc, char **argv) {
             content += line + "\n";
         }
         stringReplace(content, s1, s2);
-        std::ofstream toExport(std::string(argv[1]) + ".replace");
+        std::string fileName = std::string(argv[1]) + ".replace";
+        std::ofstream toExport(fileName.c_str());
         if (toExport.is_open()) {
             toExport << content;
             toExport.close();

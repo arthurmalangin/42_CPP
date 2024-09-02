@@ -12,7 +12,7 @@ class HumanB {
     private:
         std::string _name;
         Weapon *_w;
-        bool defaultArm;
+        bool haveArm;
 };
 
 #endif

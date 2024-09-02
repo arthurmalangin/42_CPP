@@ -1,21 +1,22 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : _w(new Weapon("empty hand's")){
+HumanB::HumanB(std::string name){
     this->_name = name;
-    this->defaultArm = true;
+    this->haveArm = false;
 }
 
 void HumanB::setWeapon(Weapon &w) {
     this->_w = &w;
-    this->defaultArm = false;
+    this->haveArm = true;
 }
 
 HumanB::~HumanB(void) {
-    if (this->defaultArm)
-        delete _w;
     std::cout << this->_name << " detroyed..." << std::endl;
 }
 
-void HumanB::attack(void) {
-    std::cout << this->_name << "  attacks with their " << _w->getType() << std::endl;
+void HumanB::attack(void) { 
+    if (this->haveArm && this->_w)
+        std::cout << this->_name << " attacks with their " << _w->getType() << std::endl;
+    else
+        std::cout << this->_name << " can't attack without Arm" << std::endl;
 }

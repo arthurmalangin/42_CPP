@@ -1,4 +1,4 @@
-NAME            =       sed
+NAME            =       ex05
 
 CC              =       c++
 

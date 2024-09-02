@@ -20,10 +20,14 @@ void Harl::error(void) {
 void Harl::complain(std::string level) {
     void (Harl::*functionPtr[4])(void) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string indexer[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    for (int i = 0; i < 4; i++) {
+    int i = 0;
+    while (!indexer[i].empty()) {
         if (level == indexer[i]) {
             (this->*functionPtr[i])();
             break;
         }
+        i++;
     }
+    if (i > 4)
+        std::cout << "Harl Error: " << level << " doesn't exist !" << std::endl; 
 }
