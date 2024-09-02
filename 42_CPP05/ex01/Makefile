@@ -1,4 +1,4 @@
-NAME            =       ex00
+NAME            =       ex01
 
 CC              =       c++
 
@@ -6,6 +6,7 @@ FLAG            =       -Wall -Wextra -Werror -std=c++98 -g
 
 C_FILE          =       main.cpp		\
 						Bureaucrat.cpp	\
+						Form.cpp		\
 
 SRC_DIR         =       ./
 

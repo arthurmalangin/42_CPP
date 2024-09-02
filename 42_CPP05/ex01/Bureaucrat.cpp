@@ -19,7 +19,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name){
 	this->_grade = grade;
 }
 
-
 const char *Bureaucrat::GradeTooHighException::what(void) const throw(){
 	return ("Grade Too High !");
 }
@@ -63,4 +62,13 @@ std::ostream& operator<<(std::ostream &stream, const Bureaucrat& obj)
 {
     stream << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
     return stream;
+}
+
+void Bureaucrat::signForm(Form &obj) {
+	if (this->getGrade() <= obj.getGradeToSign()) {
+        obj.setSigned();
+		std::cout << this->_name << " Signed " << std::endl << obj;
+    } else {
+        std::cout << this->_name << " couldn't sign  " << std::endl << obj << "Because his grade is too low." << std::endl;
+    }
 }
