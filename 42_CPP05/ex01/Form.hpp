@@ -22,7 +22,7 @@ class Form {
         std::string getName(void) const;
         bool isSigned(void) const;
         int getGradeToSign(void) const;
-        int getGradeToExectue(void) const;\
+        int getGradeToExectue(void) const;
         /*=== Setter ====*/
         void setSigned(void);
         /*==== Exception ====*/

@@ -10,7 +10,7 @@ class Animal {
     protected:
         Animal(void);
         Animal(const Animal &obj);
-        virtual void makeSound(void) const;
+        virtual void makeSound(void) const = 0;
         std::string getType(void) const;
         std::string type;
 };

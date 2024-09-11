@@ -1,23 +1,23 @@
-#ifndef FORM_CPP
-#define FORM_CPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include <exception>
 #include "Bureaucrat.hpp"
 
-class Form;
+class AForm;
 class Bureaucrat;
 
-std::ostream& operator<<(std::ostream &stream, const Form& obj);
+std::ostream& operator<<(std::ostream &stream, const AForm& obj);
 
-class Form {
+class AForm {
     public:
         /*==== Constructor/Destructor ====*/
-        Form(void);
-        Form(const Form &obj);
-        Form(std::string name, bool isSigned, int gradeToSign, int gradeToExecute);
-        Form &operator=(const Form &obj);
-        ~Form(void);
+        AForm(void);
+        AForm(const AForm &obj);
+        AForm(std::string name, bool isSigned, int gradeToSign, int gradeToExecute);
+        AForm &operator=(const AForm &obj);
+        ~AForm(void);
         /*==== Getter ====*/
         std::string getName(void) const;
         bool isSigned(void) const;
@@ -34,6 +34,7 @@ class Form {
         };
         /*==== Other ====*/
         void beSigned(Bureaucrat &obj);
+        virtual void execute(Bureaucrat const & executor) const = 0;
     private:
         const std::string _name;
         bool _signed;
