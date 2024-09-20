@@ -48,11 +48,11 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
                 output.close(); //No forget to close
             }
         }
-        else
-            std::cout << "Throw grade to execute too low" << std::endl;
+        else {
+            throw Bureaucrat::GradeTooLowException();
+        }
     }
     else {
-        std::cout << "Trow not signed Exception" << std::endl;
-        //Todo throw real exception
+        throw AForm::FormNotSignedException();
     }
 }
