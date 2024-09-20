@@ -5,6 +5,7 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include <fstream>
 
 class ShrubberyCreationForm;
 class Bureaucrat;
@@ -30,12 +31,9 @@ class ShrubberyCreationForm : public AForm{
         ShrubberyCreationForm &operator=(const ShrubberyCreationForm &obj);
         ~ShrubberyCreationForm(void);
         /*==== Other ====*/
-        virtual void execute(Bureaucrat const & executor) const;
+        void execute(Bureaucrat const & executor) const;
     private:
-        const std::string _name;
-        bool _signed;
-        const int _gradeToSign;
-        const int _gradeToExecute;
+        const std::string _target;
 };
 
 #endif

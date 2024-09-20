@@ -22,9 +22,11 @@ class AForm {
         std::string getName(void) const;
         bool isSigned(void) const;
         int getGradeToSign(void) const;
-        int getGradeToExectue(void) const;\
+        int getGradeToExectue(void) const;
         /*=== Setter ====*/
         void setSigned(void);
+        void setSignLvl(int lvl);
+        void setExecLvl(int lvl);
         /*==== Exception ====*/
         class GradeTooHighException : public std::exception{
             virtual const char *what() const throw();

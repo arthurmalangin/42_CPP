@@ -64,7 +64,7 @@ std::ostream& operator<<(std::ostream &stream, const Bureaucrat& obj)
     return stream;
 }
 
-void Bureaucrat::signForm(Form &obj) {
+void Bureaucrat::signForm(AForm &obj) {
 	if (this->getGrade() <= obj.getGradeToSign()) {
         obj.setSigned();
 		std::cout << this->_name << " Signed " << std::endl << obj;

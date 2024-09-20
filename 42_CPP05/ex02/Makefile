@@ -6,7 +6,8 @@ FLAG            =       -Wall -Wextra -Werror -std=c++98 -g
 
 C_FILE          =       main.cpp		\
 						Bureaucrat.cpp	\
-						Form.cpp		\
+						AForm.cpp		\
+						ShrubberyCreationForm.cpp \
 
 SRC_DIR         =       ./
 

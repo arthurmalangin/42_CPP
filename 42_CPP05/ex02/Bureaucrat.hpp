@@ -3,10 +3,10 @@
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat;
-class Form;
+class AForm;
 
 std::ostream& operator<<(std::ostream &stream, const Bureaucrat& obj);
 
@@ -29,7 +29,7 @@ class Bureaucrat {
             public:
                 virtual const char * what() const throw();
         };
-        void signForm(Form &obj);
+        void signForm(AForm &obj);
     protected:
         const std::string _name;
         int _grade;
