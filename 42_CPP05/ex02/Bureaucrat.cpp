@@ -72,3 +72,12 @@ void Bureaucrat::signForm(AForm &obj) {
         std::cout << this->_name << " couldn't sign  " << std::endl << obj << "Because his grade is too low." << std::endl;
     }
 }
+
+void Bureaucrat::executeForm(AForm const &form) {
+	if (this->getGrade() <= form.getGradeToExectue()) {
+		std::cout << this->getName() << " executed " << form.getName() << " !" << std::endl;
+		form.execute(*this);
+	} else {
+		std::cout << this->getName() << " attempt to execute the form " << form.getName() << " but failed" << std::endl; 
+	}
+}

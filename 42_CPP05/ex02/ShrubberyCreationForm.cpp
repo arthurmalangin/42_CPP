@@ -23,19 +23,19 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 }
 
 std::string generateAsciiTree(void) {
-    std::string ascii;
+    std::string asciiTxt;
 
-    ascii = "               ,@@@@@@@,\n";
-    ascii += "       ,,,.   ,@@@@@@/@@,  .oo8888o.\n";
-    ascii += "    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n";
-    ascii += "   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88\'\n";
-    ascii += "   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888\'\n";
-    ascii += "   %&&%/ %&%%&&@@\\ V /@@\' `88\\8 `/88\'\n";
-    ascii += "   `&%\\ ` /%&\'    |.|        \\ \'|8\'\n";
-    ascii += "       |o|        | |         | |\n";
-    ascii += "       |.|        | |         | |\n";
-    ascii += "    \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_\n";
-    return (ascii);
+    asciiTxt = "               ,@@@@@@@,\n";
+    asciiTxt += "       ,,,.   ,@@@@@@/@@,  .oo8888o.\n";
+    asciiTxt += "    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n";
+    asciiTxt += "   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88\'\n";
+    asciiTxt += "   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888\'\n";
+    asciiTxt += "   %&&%/ %&%%&&@@\\ V /@@\' `88\\8 `/88\'\n";
+    asciiTxt += "   `&%\\ ` /%&\'    |.|        \\ \'|8\'\n";
+    asciiTxt += "       |o|        | |         | |\n";
+    asciiTxt += "       |.|        | |         | |\n";
+    asciiTxt += "    \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_\n";
+    return (asciiTxt);
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
@@ -43,11 +43,13 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
         if (executor.getGrade() <= this->getGradeToExectue()) {
             std::string fileName = this->_target + "_shrubbery";
             std::ofstream output(fileName.c_str());
-            if (output.is_open()) {//Verif if file is created
+            if (output.is_open()) { //Verif if file is created
                 output << generateAsciiTree();
                 output.close(); //No forget to close
             }
         }
+        else
+            std::cout << "Throw grade to execute too low" << std::endl;
     }
     else {
         std::cout << "Trow not signed Exception" << std::endl;

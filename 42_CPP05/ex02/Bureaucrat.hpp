@@ -30,6 +30,7 @@ class Bureaucrat {
                 virtual const char * what() const throw();
         };
         void signForm(AForm &obj);
+        void executeForm(AForm const & form);
     protected:
         const std::string _name;
         int _grade;
