@@ -28,6 +28,7 @@ class AForm {
         void setSignLvl(int lvl);
         void setExecLvl(int lvl);
         /*==== Exception ====*/
+        // On m'a dit que c'etait faux car code dans le hpp
         class GradeTooHighException : public std::exception{
             virtual const char *what() const throw();
         };

@@ -1,5 +1,5 @@
-#ifndef BRAIN_CPP
-#define BRAIN_CPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
 

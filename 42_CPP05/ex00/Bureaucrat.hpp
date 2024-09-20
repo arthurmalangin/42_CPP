@@ -1,5 +1,5 @@
-#ifndef BUREAUCRAT_CPP
-#define BUREAUCRAT_CPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <exception>

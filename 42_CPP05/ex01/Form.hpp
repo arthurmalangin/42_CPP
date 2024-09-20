@@ -1,5 +1,5 @@
-#ifndef FORM_CPP
-#define FORM_CPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <iostream>
 #include <exception>

@@ -1,5 +1,5 @@
-#ifndef ANIMAL_CPP
-#define ANIMAL_CPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <iostream>
 
