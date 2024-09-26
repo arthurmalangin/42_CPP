@@ -28,6 +28,15 @@ bool isPrintable(char c) {
 
 // find type before convert
 // if . or if f in end etc .. cast with try catch for test
+// stof, stod 
+
+int findType(std::string str) {
+    if (str[str.length() - 1] == 'f' /*previous char is number*/) //float
+        return (1);
+    if (/*if only number: int beacause '.' is not a number*/) // int
+        return (2);
+    if ()
+}
 
 void ScalarConverter::convert(std::string str) {
     int nb = std::stoi(str);
