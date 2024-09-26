@@ -26,6 +26,9 @@ bool isPrintable(char c) {
     return (false);
 }
 
+// find type before convert
+// if . or if f in end etc .. cast with try catch for test
+
 void ScalarConverter::convert(std::string str) {
-    int nb = std::stoi();
+    int nb = std::stoi(str);
 }
