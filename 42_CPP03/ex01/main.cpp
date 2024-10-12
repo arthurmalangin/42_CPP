@@ -1,20 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amalangi <amalangi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/13 01:39:41 by amalangi          #+#    #+#             */
+/*   Updated: 2024/10/13 01:39:42 by amalangi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 int main( void ) {
-    ClapTrap pablo("Pabito");
-    ClapTrap igor("Igor");
-    ScavTrap michel("Michel");
+	ClapTrap a("copain");
+	ClapTrap b(a);
+	ScavTrap c("haha");
+	ScavTrap e(c);
+	ScavTrap d = c;
 
-    igor.attack("Pablito");
-    pablo.takeDamage(0);
-    igor.beRepaired(5);
-    
-    igor.takeDamage(100);
-    igor.beRepaired(100);
-
-    michel.attack("a random wall");
-    michel.takeDamage(10);
-    michel.beRepaired(10);
-    michel.guardGate();
-    return (0);
+	std::cout << std::endl;
+	a.attack("haha");
+	c.takeDamage(10);
+	c.attack("copain");
+	a.takeDamage(20);
+	a.attack("haha");
+	c.guardGate();
+	e.guardGate();
+	std::cout << std::endl;
+	return (0);
 }

@@ -1,26 +1,39 @@
-#include "ScavTrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amalangi <amalangi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/10 14:52:35 by amalangi          #+#    #+#             */
+/*   Updated: 2024/10/13 01:39:37 by amalangi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main( void ) {
-    ClapTrap pablo("Pabito");
-    ClapTrap igor("Igor");
-    ScavTrap michel("Michel");
-    FragTrap gilou("Gilou");
+	ClapTrap a("Clap");
+	ClapTrap b("Clap2");
+	ScavTrap c("Scav");
+	FragTrap d("Frag");
+	FragTrap e(d);
+	ScavTrap f(c);
 
-    igor.attack("Pablito");
-    pablo.takeDamage(0);
-    igor.beRepaired(5);
-    
-    igor.takeDamage(100);
-    igor.beRepaired(100);
+	FragTrap tmp;
 
-    michel.attack("a random wall");
-    michel.takeDamage(10);
-    michel.beRepaired(10);
-    michel.guardGate();
+	tmp = e;
+	FragTrap g(tmp);
 
-    gilou.attack("a random door");
-    gilou.takeDamage(10);
-    gilou.beRepaired(10);
-    gilou.highFivesGuys();
+	std::cout << std::endl;
+	a.attack("Clap2");
+	c.takeDamage(0);
+	d.beRepaired(10);
+	d.highFivesGuys();
+	d.attack("Clap2");
+	b.takeDamage(20);
+	c.guardGate();
+	std::cout << std::endl;
+	return (0);
 }

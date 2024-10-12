@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amalangi <amalangi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/13 01:40:08 by amalangi          #+#    #+#             */
+/*   Updated: 2024/10/13 01:40:08 by amalangi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) {
@@ -18,7 +30,7 @@ ScavTrap::ScavTrap(std::string name) {
     std::cout << name << " the ScavTrap created !" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &obj) {
+ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj) {
     this->name = obj.name;
     this->health = obj.health;
     this->stamina = obj.stamina;

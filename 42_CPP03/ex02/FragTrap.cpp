@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amalangi <amalangi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/13 01:40:19 by amalangi          #+#    #+#             */
+/*   Updated: 2024/10/13 01:40:19 by amalangi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(void) {
@@ -16,7 +28,7 @@ FragTrap::FragTrap(std::string name) {
     std::cout << name << " the FragTrap created !" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &obj) {
+FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj) {
     this->name = obj.name;
     this->health = obj.health;
     this->stamina = obj.stamina;
