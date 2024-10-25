@@ -1,28 +1,27 @@
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal() {
-    std::cout << "Default Constructor of Dog Call !" << std::endl;
-    this->type = "Dog";
+Dog::Dog(void) : Animal("Dog") {
+    std::cout << "\033[32mDefault Constructor of Dog Call !\033[0m" << std::endl;
     this->brain = new Brain();
 }
 
-Dog::Dog(const Dog &obj) : Animal() {
-    std::cout << "Copy Constructor of Dog Call !" << std::endl;
+Dog::Dog(const Dog &obj) : Animal(obj){
+    std::cout << "\033[32mCopy Constructor of Dog Call !\033[0m" << std::endl;
     this->type = obj.type;
-    this->brain = obj.brain;
+    this->brain = new Brain(*obj.brain);
 }
 
 Dog::~Dog(void) {
-    std::cout << "Destructor of Dog Call !" << std::endl;
+    std::cout << "\033[31mDestructor of Dog Call !\033[0m" << std::endl;
     delete this->brain;
 }
 
 Dog& Dog::operator=(const Dog &obj) {
     this->type = obj.type;
-    this->brain = obj.brain;
+    this->brain = new Brain(*obj.brain);
     return (*this);
 }
 
 void Dog::makeSound(void) const{
-    std::cout << "BARK BARK" << std::endl;
+    std::cout << "\033[33mBARK BARK\033[0m" << std::endl;
 }

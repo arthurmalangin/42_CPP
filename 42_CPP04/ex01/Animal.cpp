@@ -1,17 +1,20 @@
 #include "Animal.hpp"
 
-Animal::Animal(void) {
-    std::cout << "Default Constructor of Animal Call with type : " << this->getType() << " !" << std::endl;
-    this->type = "Default";
+Animal::Animal(void) : type("Default"){
+    std::cout << "\033[32mDefault Constructor of Animal Call with type : " << this->getType() << " !\033[0m" << std::endl;
+}
+
+Animal::Animal(std::string type) : type(type) {
+    std::cout << "\033[32mSetter Contructor of Animal Call With Type : " << this->getType() << " !\033[0m" << std::endl;
 }
 
 Animal::Animal(const Animal &obj) {
-    std::cout << "Copy Constructor of Animal Call !" << std::endl;
+    std::cout << "\033[32mCopy Constructor of Animal Call !" << std::endl;
     this->type = obj.type;
 }
 
 Animal::~Animal(void) {
-    std::cout << "Destructor of Animal Call with type : " << this->getType() << " !" << std::endl;
+    std::cout << "\033[31mDestructor of Animal Call with type : " << this->getType() << " !\033[0m" << std::endl;
 }
 
 Animal& Animal::operator=(const Animal &obj) {
@@ -20,7 +23,7 @@ Animal& Animal::operator=(const Animal &obj) {
 }
 
 void Animal::makeSound(void) const {
-    std::cout << "Default Make Sound" << std::endl;
+    std::cout << "\033[33mDefault Make Sound\033[0m" << std::endl;
 }
 
 std::string Animal::getType(void) const {

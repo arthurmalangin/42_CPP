@@ -1,17 +1,15 @@
 #include "Dog.hpp"
 
-Dog::Dog(void) {
-    std::cout << "Default Constructor of Dog Call !" << std::endl;
-    this->type = "Dog";
+Dog::Dog(void) : Animal("Dog") {
+    std::cout << "\033[32mDefault Constructor of Dog Call !\033[0m" << std::endl;
 }
 
-Dog::Dog(const Dog &obj) {
-    std::cout << "Copy Constructor of Dog Call !" << std::endl;
-    this->type = obj.type;
+Dog::Dog(const Dog &obj) : Animal(obj) {
+    std::cout << "\033[32mCopy Constructor of Dog Call !\033[0m" << std::endl;
 }
 
 Dog::~Dog(void) {
-    std::cout << "Destructor of Dog Call !" << std::endl;
+    std::cout << "\033[31mDestructor of Dog Call !\033[0m" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog &obj) {
@@ -20,5 +18,5 @@ Dog& Dog::operator=(const Dog &obj) {
 }
 
 void Dog::makeSound(void) const{
-    std::cout << "BARK BARK" << std::endl;
+    std::cout << "\033[33mBARK BARK\033[0m" << std::endl;
 }

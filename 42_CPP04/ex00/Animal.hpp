@@ -6,6 +6,7 @@
 class Animal {
     public:
         Animal(void);
+        Animal(std::string type);
         Animal(const Animal &obj);
         virtual ~Animal(void);
         Animal &operator=(const Animal &obj);

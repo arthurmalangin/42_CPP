@@ -1,17 +1,20 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void) {
-    this->type = "Default";
-    std::cout << "Default Constructor of WrongAnimal Call with type : " << this->getType() << " !" << std::endl;
+WrongAnimal::WrongAnimal(void) : type("Default"){
+    std::cout << "\033[32mDefault Constructor of WrongAnimal Call with type : " << this->getType() << " !\033[0m" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(std::string type) : type(type) {
+    std::cout << "\033[32mSetter Constructor of WrongAnimal Call with type : " << this->getType() << " !\033[0m" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &obj) {
+    std::cout << "\033[32mCopy Constructor of WrongAnimal Call !\033[0m" << std::endl;
     this->type = obj.type;
-    std::cout << "Copy Constructor of WrongAnimal Call !" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal(void) {
-    std::cout << "Destructor of WrongAnimal Call with type : " << this->getType() << " !" << std::endl;
+    std::cout << "\033[31mDestructor of WrongAnimal Call with type : " << this->getType() << " !\033[0m" << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal &obj) {
@@ -20,7 +23,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal &obj) {
 }
 
 void WrongAnimal::makeSound(void) const {
-    std::cout << "Wrong Default Make Sound" << std::endl;
+    std::cout << "\033[33mWrong Default Make Sound\033[0m" << std::endl;
 }
 
 std::string WrongAnimal::getType(void) const {
