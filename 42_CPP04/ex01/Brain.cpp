@@ -16,6 +16,7 @@ Brain::~Brain(void) {
 }
 
 Brain& Brain::operator=(const Brain &obj) {
+    std::cout << "operator brain call !=========================" << std::endl;
     for (int i = 0; i < 100; i++) {
         this->ideas[i] = obj.ideas[i];
     }

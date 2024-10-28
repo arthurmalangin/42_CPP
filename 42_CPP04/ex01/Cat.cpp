@@ -16,7 +16,10 @@ Cat::~Cat(void) {
 }
 
 Cat& Cat::operator=(const Cat &obj) {
+    std::cout << "Cat operator call !=============================" << std::endl;
     this->type = obj.type;
+    if (this->brain)
+        delete this->brain;
     this->brain = new Brain(*obj.brain);
     return (*this);
 }
