@@ -10,8 +10,8 @@ class Brain {
         Brain &operator=(const Brain &obj);
         ~Brain(void);
 
-        std::string ideas[100];
     private:
+        std::string ideas[100];
 };
 
 #endif

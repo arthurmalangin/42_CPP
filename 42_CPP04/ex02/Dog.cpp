@@ -18,6 +18,8 @@ Dog::~Dog(void) {
 
 Dog& Dog::operator=(const Dog &obj) {
     this->type = obj.type;
+    if (this->brain)
+        delete this->brain;
     this->brain = new Brain(*obj.brain);
     return (*this);
 }

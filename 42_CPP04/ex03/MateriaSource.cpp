@@ -8,9 +8,12 @@ MateriaSource::MateriaSource() {
 }
 
 MateriaSource::MateriaSource(const MateriaSource &obj) {
-	for (int i = 0; i < 4; i++) {
-		this->_src[i] = obj.getSrc(i);
-	}
+    for (int i = 0; i < 4; i++) {
+        if (obj._src[i])
+            this->_src[i] = obj._src[i]->clone();
+        else
+            this->_src[i] = NULL;
+    }
 }
 
 MateriaSource::~MateriaSource() {
@@ -23,11 +26,21 @@ MateriaSource::~MateriaSource() {
 AMateria	*MateriaSource::getSrc(int i) const {
 	return (this->_src[i]);
 }
-MateriaSource	&MateriaSource::operator=(const MateriaSource &obj) {
-	for (int i = 0; i < 4; i++) {
-		this->_src[i] = obj.getSrc(i);
-	}
-	return (*this);
+
+MateriaSource &MateriaSource::operator=(const MateriaSource &obj) {
+    if (this != &obj) {
+        for (int i = 0; i < 4; i++) {
+            if (this->_src[i]) {
+                delete this->_src[i];
+                this->_src[i] = NULL;
+            }
+        }
+        for (int i = 0; i < 4; i++) {
+            if (obj._src[i])
+                this->_src[i] = obj._src[i]->clone();
+        }
+    }
+    return *this;
 }
 
 void	MateriaSource::learnMateria(AMateria *m) {
@@ -46,7 +59,7 @@ void	MateriaSource::learnMateria(AMateria *m) {
 AMateria	*MateriaSource::createMateria(std::string const &type) {
 	std::cout << "create Materia call ! " << type << std::endl;
 	for (int i = 0; i < 4; i++) {
-		if (this->_src[i]->getType() == type) {
+		if (this->_src[i] && this->_src[i]->getType() == type) {
 			return (this->_src[i]->clone());
 		}
 	}

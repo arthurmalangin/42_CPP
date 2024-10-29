@@ -17,6 +17,8 @@ Cat::~Cat(void) {
 
 Cat& Cat::operator=(const Cat &obj) {
     this->type = obj.type;
+    if (this->brain)
+        delete this->brain;
     this->brain = new Brain(*obj.brain);
     return (*this);
 }
