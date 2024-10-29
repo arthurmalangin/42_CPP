@@ -8,7 +8,7 @@ class WrongAnimal {
         WrongAnimal(void);
         WrongAnimal(std::string type);
         WrongAnimal(const WrongAnimal &obj);
-        virtual ~WrongAnimal(void);
+        ~WrongAnimal(void);
         WrongAnimal &operator=(const WrongAnimal &obj);
         void makeSound(void) const;
         std::string getType(void) const;
