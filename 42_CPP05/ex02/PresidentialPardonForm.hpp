@@ -12,7 +12,7 @@ class Bureaucrat;
 
 std::ostream& operator<<(std::ostream &stream, const PresidentialPardonForm& obj);
 
-class PresidentialPardonForm : public AForm{
+class PresidentialPardonForm : public AForm {
     public:
         /*==== Constructor/Destructor ====*/
         PresidentialPardonForm(void);
@@ -22,8 +22,6 @@ class PresidentialPardonForm : public AForm{
         ~PresidentialPardonForm(void);
         /*==== Other ====*/
         void execute(Bureaucrat const & executor) const;
-    private:
-        const std::string _target;
 };
 
 #endif

@@ -4,17 +4,17 @@
 #include <cstdlib>
 #include <ctime>
 
-RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", false, 72, 45), _target("Default"){
+RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", false, 72, 45){
 	std::cout << "Default constructor of RobotomyRequestForm call !" << std::endl;
 	std::srand(std::time(0));
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm(obj.getName(), obj.isSigned(), 72, 45), _target(obj._target) {
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm(obj.getName(), obj.isSigned(), 72, 45) {
 	std::cout << "Copy constructor of RobotomyRequestForm call !" << std::endl;
 	std::srand(std::time(0));
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", false, 72, 45), _target(target) {
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm(target, false, 72, 45) {
 	std::cout << "Affectation constructor of RobotomyRequestForm call !" << std::endl;
 	std::srand(std::time(0));
 }

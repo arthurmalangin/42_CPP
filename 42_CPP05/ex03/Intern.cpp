@@ -3,44 +3,52 @@
 /*==== Constructor/Destructor ====*/
 Intern::Intern(void) {
     std::cout << "Default constructor of Intern Call !" << std::endl;
-    this->_formCreated = nullptr;
 }
 
 Intern::Intern(const Intern &obj) {
+    *this = obj;
     std::cout << "Copy Constructor of Intern Call !" << std::endl;
 }
 
 Intern& Intern::operator=(const Intern &obj) {
+    (void)obj;
     std::cout << "Operator of Intern Call !" << std::endl;
+    return (*this);
 }
 
 Intern::~Intern(void) {
-    delete this->_formCreated;
 }
 
 /*==== Other ====*/
-std::string lowerStr(std::string str) {
-    std::string lowStr = str;
-    for (int i = 0; i < str.length(); i++) {
-        lowStr = std::tolower(str[i]);
-    }
-    return (lowStr);
+AForm	*Intern::newRobot(Bureaucrat &target)
+{
+	return (new RobotomyRequestForm(target.getName()));
 }
 
-AForm *Intern::makeForm(std::string formName, std::string targetOfForm) {
-    std::string wordList[3] = { "shrubbery", "robotomy", "presidential"};
-    // Tableau de lambdas pour creer des instances
-    AForm* (*tabConstructor[3])(const std::string&) = {
-            [](const std::string& target) -> AForm* { return new ShrubberyCreationForm(target); },
-            [](const std::string& target) -> AForm* { return new RobotomyRequestForm(target); },
-            [](const std::string& target) -> AForm* { return new PresidentialPardonForm(target); }
-    };
-    for (int i = 0; i < 3; i++) {
-        if (lowerStr(formName).find(wordList[i])) {
-            this->_formCreated = tabConstructor[i](targetOfForm);
-            return (this->_formCreated);
-        }
-    }
-    std::cout << "Error: FormName does not exist" << std::endl;
-    return (nullptr);
+AForm	*Intern::newPresident(Bureaucrat &target)
+{
+	return (new PresidentialPardonForm(target.getName()));
+}
+
+AForm	*Intern::newShrubbery(Bureaucrat &target)
+{
+	return (new ShrubberyCreationForm(target.getName()));
+}
+
+AForm	*Intern::makeForm(std::string formName, std::string targetName)
+{
+	std::string	formType[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
+	AForm		*(Intern::*func[3])(Bureaucrat &target) = {&Intern::newRobot, &Intern::newPresident, &Intern::newShrubbery};
+
+	Bureaucrat	*target = new Bureaucrat(targetName, 150);
+	AForm		*form = NULL;
+	for (int i = 0; i < 3; i++)
+	{
+		if (formType[i] == formName)
+			form = (this->*func[i])(*target);
+	}
+	delete target;
+	if (!form)
+		throw std::exception();
+	return (form);
 }

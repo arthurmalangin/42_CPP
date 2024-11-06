@@ -17,7 +17,9 @@ class Intern {
         /*==== Other ====*/
         AForm *makeForm(std::string formName, std::string targetOfForm);
     private:
-        AForm *_formCreated;
+        AForm	*newRobot(Bureaucrat &target);
+		AForm	*newPresident(Bureaucrat &target);
+		AForm	*newShrubbery(Bureaucrat &target);
 };
 
 #endif

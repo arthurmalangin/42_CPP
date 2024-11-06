@@ -2,12 +2,13 @@
 
 int main(void) {
     try {
-        Bureaucrat b(152);
+        Bureaucrat b("n", 152);
     } catch (std::exception &e) {
         std::cerr << "ERROR: " << e.what() << std::endl;
     }
-    Bureaucrat polo(10);
+    Bureaucrat polo("polo", 10);
     std::cout << polo << std::endl;
-    
+    Bureaucrat pablo(polo);
+
     return (0);
 }

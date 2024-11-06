@@ -1,22 +1,15 @@
 #include "PresidentialPardonForm.hpp"
 
-// Include pour le random
-#include <cstdlib>
-#include <ctime>
-
-PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardonForm", false, 25, 5), _target("Default"){
+PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardonForm", false, 25, 5){
 	std::cout << "Default constructor of PresidentialPardonForm call !" << std::endl;
-	std::srand(std::time(0));
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm(obj.getName(), obj.isSigned(), 25, 5), _target(obj._target) {
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm(obj.getName(), obj.isSigned(), 25, 5) {
 	std::cout << "Copy constructor of PresidentialPardonForm call !" << std::endl;
-	std::srand(std::time(0));
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", false, 25, 5), _target(target) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm(target, false, 25, 5) {
 	std::cout << "Affectation constructor of PresidentialPardonForm call !" << std::endl;
-	std::srand(std::time(0));
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &obj) {
@@ -26,7 +19,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void) {
-	std::cout << "Destructor of ShrubberryCreationForm Call !" << std::endl;
+	std::cout << "Destructor of PresidentialPardonForm Call !" << std::endl;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const {

@@ -17,7 +17,7 @@ class AForm {
         AForm(const AForm &obj);
         AForm(std::string name, bool isSigned, int gradeToSign, int gradeToExecute);
         AForm &operator=(const AForm &obj);
-        ~AForm(void);
+        virtual ~AForm(void);
         /*==== Getter ====*/
         std::string getName(void) const;
         bool isSigned(void) const;
@@ -38,7 +38,7 @@ class AForm {
             virtual const char *what() const throw();
         };
         /*==== Other ====*/
-        void beSigned(Bureaucrat &obj);
+        virtual void beSigned(Bureaucrat &obj);
         virtual void execute(Bureaucrat const & executor) const = 0;
     private:
         const std::string _name;

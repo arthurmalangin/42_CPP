@@ -8,6 +8,8 @@ C_FILE          =       main.cpp		\
 						Bureaucrat.cpp	\
 						AForm.cpp		\
 						ShrubberyCreationForm.cpp \
+						PresidentialPardonForm.cpp \
+						RobotomyRequestForm.cpp	\
 
 SRC_DIR         =       ./
 
@@ -23,7 +25,7 @@ OBJ                     =       $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "\033[0;33m\nCOMPILING EX00...\n"
+	@echo "\033[0;33m\nCOMPILING EX02...\n"
 	$(CC) $(FLAG) $(OBJ) -o $(NAME)
 	@echo "\033[1;32m./$(NAME) created\n"
 

@@ -22,8 +22,6 @@ class RobotomyRequestForm : public AForm{
         ~RobotomyRequestForm(void);
         /*==== Other ====*/
         void execute(Bureaucrat const & executor) const;
-    private:
-        const std::string _target;
 };
 
 #endif
