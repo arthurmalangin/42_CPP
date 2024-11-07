@@ -3,16 +3,19 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 class ScalarConverter {
     public:
         /*====== Constructor/Destructor ======*/
-        ScalarConverter(void);
-        ScalarConverter(const ScalarConverter &obj);
         ~ScalarConverter(void);
         /*====== Operator ======*/
-        virtual ScalarConverter &operator=(const ScalarConverter &obj) = 0;
+        virtual ScalarConverter &operator=(const ScalarConverter &obj);
         static void convert(std::string str);
+		private:
+			ScalarConverter(void);
+        	ScalarConverter(const ScalarConverter &obj);
+
 };
 
 #endif
