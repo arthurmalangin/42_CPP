@@ -5,16 +5,16 @@ int main() {
 
     // serialize
     uintptr_t raw = Serializer::serialize(&originalData);
-    std::cout << "Serialized value: " << raw << std::endl;
+    std::cout << "\033[103mSerialized value: " << raw << "\033[0m" << std::endl;
 
     // deserialize
     Data* deserializedData = Serializer::deserialize(raw);
     std::cout << "Deserialized data, value: " << deserializedData->value << ", name: " << deserializedData->name << std::endl;
 
     if (deserializedData == &originalData) {
-        std::cout << "Success !" << std::endl;
+        std::cout << "\033[102mSuccess !\033[0m" << std::endl;
     } else {
-        std::cout << "Error not the same !" << std::endl;
+        std::cout << "\033[101mError not the same !\033[0m" << std::endl;
     }
 
     return 0;
