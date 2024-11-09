@@ -1,14 +1,14 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", false, 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 145, 137) {
     std::cout << "Default constructor of ShrubberyCreationForm call !" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : AForm(obj.getName(), obj.isSigned(), 145, 137){
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : AForm(obj.getName(), 145, 137){
     std::cout << "Copy constructor of ShrubberyCreationForm call !" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm(target, false, 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm(target, 145, 137) {
     std::cout << "Affectation constructor of ShrubberyCreationForm call !" << std::endl;
 }
 

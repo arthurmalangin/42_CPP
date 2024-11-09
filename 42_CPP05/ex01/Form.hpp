@@ -15,7 +15,7 @@ class Form {
         /*==== Constructor/Destructor ====*/
         Form(void);
         Form(const Form &obj);
-        Form(std::string name, bool isSigned, int gradeToSign, int gradeToExecute);
+        Form(std::string name, int gradeToSign, int gradeToExecute);
         Form &operator=(const Form &obj);
         ~Form(void);
         /*==== Getter ====*/

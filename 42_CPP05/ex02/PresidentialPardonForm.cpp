@@ -1,14 +1,14 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardonForm", false, 25, 5){
+PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardonForm", 25, 5){
 	std::cout << "Default constructor of PresidentialPardonForm call !" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm(obj.getName(), obj.isSigned(), 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm(obj.getName(), 25, 5) {
 	std::cout << "Copy constructor of PresidentialPardonForm call !" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm(target, false, 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm(target, 25, 5) {
 	std::cout << "Affectation constructor of PresidentialPardonForm call !" << std::endl;
 }
 

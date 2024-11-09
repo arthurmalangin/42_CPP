@@ -6,12 +6,11 @@ AForm::AForm(void) : _name("Default AForm"), _signed(false), _gradeToSign(150), 
     std::cout << "Default AForm constructor call !" << std::endl;
 }
 
-AForm::AForm(std::string name, bool isSigned, int gradeToSign, int gradeToExecute) : _name(name),  _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute){
+AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute){
     std::cout << "Affectation AForm constructor call !" << std::endl;
-    _signed = isSigned;
 }
 
-AForm::AForm(const AForm &obj) : _name(obj.getName()), _signed(false), _gradeToSign(obj.getGradeToSign()), _gradeToExecute(obj.getGradeToExectue()){
+AForm::AForm(const AForm &obj) : _name(obj.getName()), _signed(obj._signed), _gradeToSign(obj.getGradeToSign()), _gradeToExecute(obj.getGradeToExectue()){
     std::cout << "Copy Constructor AForm Call !" << std::endl;
 }
 

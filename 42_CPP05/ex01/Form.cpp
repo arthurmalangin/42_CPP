@@ -6,12 +6,11 @@ Form::Form(void) : _name("Default Form"), _signed(false), _gradeToSign(150), _gr
     std::cout << "Default Form constructor call !" << std::endl;
 }
 
-Form::Form(std::string name, bool isSigned, int gradeToSign, int gradeToExecute) : _name(name),  _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute){
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false),  _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute){
     std::cout << "Affectation Form constructor call !" << std::endl;
-    _signed = isSigned;
 }
 
-Form::Form(const Form &obj) : _name(obj.getName()), _signed(false), _gradeToSign(obj.getGradeToSign()), _gradeToExecute(obj.getGradeToExectue()){
+Form::Form(const Form &obj) : _name(obj.getName()), _signed(obj._signed), _gradeToSign(obj.getGradeToSign()), _gradeToExecute(obj.getGradeToExectue()){
     std::cout << "Copy Constructor Form Call !" << std::endl;
 }
 

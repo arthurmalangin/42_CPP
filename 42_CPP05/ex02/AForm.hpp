@@ -15,7 +15,7 @@ class AForm {
         /*==== Constructor/Destructor ====*/
         AForm(void);
         AForm(const AForm &obj);
-        AForm(std::string name, bool isSigned, int gradeToSign, int gradeToExecute);
+        AForm(std::string name, int gradeToSign, int gradeToExecute);
         AForm &operator=(const AForm &obj);
         virtual ~AForm(void);
         /*==== Getter ====*/
