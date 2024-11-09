@@ -4,19 +4,22 @@
 
 template <typename T>
 Array<T>::Array() { // on ajoute <T> pour specifier le type de la classe (il pourrais il y'avoir plusieurs version de array, une avec un int et une autre avec un float)
+	std::cout << "Array default constructor !" << std::endl;
 	this->_array = new T[0]; // == int tableau[0]
 	this->_size = 0;
 }
 
 template <typename T>
 Array<T>::Array(unsigned int n) : _size(n) {
+	std::cout << "Array affectation constructor !" << std::endl;
 	this->_array = new T[n]; // == int tableau[50] par exemple/alloue 50 cases 
 }
 
 template <typename T>
 Array<T>::Array(const Array &obj) : _size(obj._size) {
+	std::cout << "Array copy constructor !" << std::endl;
 	this->_array = new T[this->_size];
-	for (unsigned int i = 0; i < this._size; i++) {
+	for (unsigned int i = 0; i < this->_size; i++) {
 		this->_array[i] = obj._array[i];
 	}
 }
