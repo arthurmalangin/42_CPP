@@ -11,9 +11,9 @@ class ScalarConverter {
         /*====== Constructor/Destructor ======*/
         ~ScalarConverter(void);
         /*====== Operator ======*/
-        virtual ScalarConverter &operator=(const ScalarConverter &obj);
         static void convert(std::string str);
-		private:
+	private:
+        	ScalarConverter &operator=(const ScalarConverter &obj);
 			ScalarConverter(void);
         	ScalarConverter(const ScalarConverter &obj);
 

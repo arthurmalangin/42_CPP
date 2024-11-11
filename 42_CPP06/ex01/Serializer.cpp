@@ -12,6 +12,10 @@ Serializer::Serializer() {
 
 }
 
+Serializer::Serializer(const Serializer &obj) {
+	(void)obj;
+}
+
 Serializer::~Serializer() {
 
 }

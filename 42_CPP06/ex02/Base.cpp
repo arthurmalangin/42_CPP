@@ -37,19 +37,19 @@ void identify(Base& p)
 		std::cout << "\033[100mherite/est de type : Base\033[0m" << std::endl;
 	} catch (std::exception &e) {}
     try {
-        dynamic_cast<A&>(p);
+        (void)dynamic_cast<A&>(p);
         std::cout << "\033[32mtype : A\033[0m" << std::endl;
         return;
     } catch (std::exception &e) {}
 
     try {
-        dynamic_cast<B&>(p);
+        (void)dynamic_cast<B&>(p);
         std::cout << "\033[33mtype : B\033[0m" << std::endl;
         return;
     } catch (std::exception &e) {}
 
     try {
-        dynamic_cast<C&>(p);
+        (void)dynamic_cast<C&>(p);
         std::cout << "\033[31mtype : C\033[0m" << std::endl;
         return;
     } catch (std::exception &e) {}

@@ -13,6 +13,7 @@ class Serializer {
 
 	private:
 		Serializer();
+		Serializer(const Serializer &obj);
 		~Serializer();
 		Serializer &operator=(const	Serializer &obj);
 
