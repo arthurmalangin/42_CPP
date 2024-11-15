@@ -45,7 +45,7 @@ const char *Array<T>::OutOfBoundException::what(void) const throw(){
 
 template <typename T>
 T &Array<T>::operator[](unsigned int i) {
-	if (this->_size < i || this->_array == NULL) {
+	if (this->_size <= i || this->_array == NULL) {
 		throw Array::OutOfBoundException();
 	}
 	return (this->_array[i]);
