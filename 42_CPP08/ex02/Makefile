@@ -4,7 +4,7 @@ CC              =       c++
 
 FLAG            =       -Wall -Wextra -Werror -std=c++98 -g 
 
-C_FILE          =       main.cpp		
+C_FILE          =       main.cpp 	
 
 SRC_DIR         =       ./
 
