@@ -1,6 +1,5 @@
 #include "Array.hpp"
-/*
-//TODO conditionnal jump with valgrind to fix */
+
 int main() {
 	Array<double> list(50);
 	
