@@ -7,7 +7,7 @@ void stringReplace(std::string &line, std::string toSearch, std::string toReplac
     while (pos != std::string::npos) {
         line.erase(pos, toSearch.size());
         line.insert(pos, toReplace);
-        pos = line.find(toSearch);
+        pos = line.find(toSearch, pos + toReplace.size());
     }
 }
 int main(int argc, char **argv) {
